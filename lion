@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec nvim -u "~/.config/lionvim/init.lua" "$@"
+exec nvim -u "$HOME/.config/lionvim/init.lua" "$@"
