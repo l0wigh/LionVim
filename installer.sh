@@ -17,7 +17,7 @@ function installconfig {
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	cp ./lionvim $HOME/.config/ -r
 	cp ./lion $HOME/.local/bin/
-	cp ./lion /usr/bin/
+	sudo cp ./lion /usr/bin/
 	# sudo apt-get install --yes ripgrep python3-venv yarn npm git
 	lion --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 	echo "Installation finished"

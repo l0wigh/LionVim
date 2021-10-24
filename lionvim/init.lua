@@ -59,3 +59,4 @@ vim.cmd [[
 require("packer-bootstrap")
 require("plugins")
 require("completion")
+require("colors")
