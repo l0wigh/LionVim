@@ -16,46 +16,51 @@ This repo is mainly here for me, and to help peoples to see how to configure nvi
 
 The installer is (for now) really simple and can't be used for a full install.
 
-Requirements : 
-	- Nvim 0.5.0 or higher
-	- yarn / npm
-	- ripgrep
-	- python3-venv
+Requirements :
+
+* Nvim 0.5.0 or higher
+* yarn / npm
+* ripgrep
+* python3-venv
 
 # What's inside the configuration ?
 
 LSP support with :
-	- lspconfig
-	- lsp-installer
-	- coq.nvim (yeah, not nvim-cmp)
-	- treesitter
-	- lsp-colors
+
+- lspconfig
+- lsp-installer
+- coq.nvim (yeah, not nvim-cmp)
+- treesitter
+- lsp-colors
 
 UI with :
-	- Custom NeoSolarized colorscheme
-	- Feline
-	- Barbar
-	- Dashboard
+
+- Custom NeoSolarized colorscheme
+- Feline
+- Barbar
+- Dashboard
 
 Workflow tools :
-	- Telescope
-	- Undotree
-	- Nvimtree
-	- Which-key
+
+- Telescope
+- Undotree
+- Nvimtree
+- Which-key
 
 and probably some other plugins
 
 Vim configuration :
-	- numbers + relative numbers
-	- true colors
-	- 4 chars long hard tabs
-	- no swap files, undo folder (~/.config/lionvim/undodir)
-	- no wrap
-	- transparent background
-	- the most important setup : jklm instead of hjkl (because french keyboard) 
-	- and other stuff...
 
-# Will it broke my nvim install
+- numbers + relative numbers
+- true colors
+- 4 chars long hard tabs
+- no swap files, undo folder (~/.config/lionvim/undodir)
+- no wrap
+- transparent background
+- the most important setup : jklm instead of hjkl (because french keyboard) 
+- and other stuff...
+
+# Will it broke my nvim install ?
 
 It should really broke your nvim installation but be carefull, some plugins might be installed outside my config like dashboard.
 
