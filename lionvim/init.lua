@@ -2,6 +2,13 @@ vim.cmd [[
 	set rtp+=~/.config/lionvim/
 	set rtp-=~/.config/nvim/
 	set termguicolors
+]]
+
+require("packer-bootstrap")
+require("plugins")
+require("completion")
+
+vim.cmd [[
 	set noshowmode
 	set nowrap
 	set tabstop=4
@@ -21,7 +28,6 @@ vim.cmd [[
 	set listchars=tab:\∙\ 
 	set timeoutlen=100
 	set noerrorbells
-	colorscheme NeoSolarized
 
 	nnoremap j h
 	nnoremap k j
@@ -54,8 +60,6 @@ vim.cmd [[
 	autocmd VimEnter * hi MsgArea guibg=none
 	autocmd VimEnter * hi TelescopeBorder guibg=none
 	autocmd VimEnter * hi NvimTreeNormal guibg=none
+	colorscheme NeoSolarized
 ]]
 
-require("packer-bootstrap")
-require("plugins")
-require("completion")
