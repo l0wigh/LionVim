@@ -29,15 +29,15 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.g.coq_settings = {
-	auto_start = "shut-up",
-	keymap = {
-		recommended = false,
-		jump_to_mark =  "<S-Tab>"
-	}
-}
-
-require("coq")
+-- vim.g.coq_settings = {
+-- 	auto_start = "shut-up",
+-- 	keymap = {
+-- 		recommended = false,
+-- 		jump_to_mark =  "<S-Tab>"
+-- 	}
+-- }
+-- 
+-- require("coq")
 
 local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
@@ -75,3 +75,84 @@ MUtils.BS = function()
 end
 
 remap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
+
+local cmp = require'cmp'
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local luasnip = require("luasnip")
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
+	mapping = {
+		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		['<Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif has_words_before() then
+				cmp.complete()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+		['<CR>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		})
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' }, -- For luasnip users.
+		{ name = 'nvim_lua' },
+		{ name = 'path'},
+		{ name = 'buffer' },
+	}),
+	experimental = {
+		ghost_text = true,
+		native_menu = false
+	},
+})
+
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50, menu = {
+		buffer =   "<BUF>",
+		nvim_lsp = "<LSP>",
+		nvim_lua = "<API>",
+		path =     "<PATH>",
+		luasnip =  "<SNIP>",
+	}})
+  }
+}
+
+require "lsp_signature".setup({
+	floating_window = false,
+	floatin_window_above_cur_line = false,
+	hint_enable = true,
+	hint_prefix = "🦁 "
+})
+
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" } })                                                                                                                   
