@@ -22,6 +22,7 @@ Requirements :
 * yarn / npm
 * ripgrep
 * python3-venv
+* git
 
 # What's inside the configuration ?
 
