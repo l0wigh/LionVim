@@ -15,7 +15,6 @@ function installnvim {
 function installconfig {
 	cp ./lionvim $HOME/.config/ -r
 	cp ./lion $HOME/.local/bin/
-	mkdir $HOME/.config/_old_lion
 	# sudo apt-get install --yes ripgrep python3-venv yarn npm git
 	lion --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 	echo "Installation finished"

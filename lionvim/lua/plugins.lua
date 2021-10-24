@@ -47,7 +47,6 @@ require('packer').startup({function()
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
 
-	use 'glepnir/lspsaga.nvim'
 
 
 end,
