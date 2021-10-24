@@ -19,7 +19,7 @@ function installconfig {
 	cp ./lion $HOME/.local/bin/
 	sudo cp ./lion /usr/bin/
 	# sudo apt-get install --yes ripgrep python3-venv yarn npm git
-	lion +PackerInstall +COQdeps
+	nvim -u "$HOME/.config/lionvim/bootstrap.lua" --headless -c "au User PackerComplete quitall" -c "PackerSync"
 	echo "Installation finished"
 	echo "Use the command "lion" to RrrrRRRR"
 }

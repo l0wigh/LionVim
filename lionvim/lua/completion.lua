@@ -6,9 +6,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-vim.o.updatetime = 0
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]]
-
 lsp_installer.on_server_ready(function(server)
     local opts = {}
     server:setup(opts)

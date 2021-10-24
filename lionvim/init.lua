@@ -2,13 +2,6 @@ vim.cmd [[
 	set rtp+=~/.config/lionvim/
 	set rtp-=~/.config/nvim/
 	set termguicolors
-]]
-
-require("packer-bootstrap")
-require("plugins")
-require("completion")
-
-vim.cmd [[
 	set noshowmode
 	set nowrap
 	set tabstop=4
@@ -63,3 +56,5 @@ vim.cmd [[
 	colorscheme NeoSolarized
 ]]
 
+require("plugins")
+require("completion")
