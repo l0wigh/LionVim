@@ -62,6 +62,6 @@ Vim configuration :
 
 # Will it broke my nvim install ?
 
-It should really broke your nvim installation but be carefull, some plugins might be installed outside my config like dashboard.
+It should not broke your nvim installation but be carefull, some plugins might be installed outside my config folder like dashboard.
 
 Never try this config with backing up your pervious nvim stuff.
