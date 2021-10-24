@@ -28,7 +28,8 @@ local function update()
 end
 
 local function status()
-	notification("This will show the status of LionVim", "Information", { title = "LionVim" })
+	notification("Version 0.0.1", "Information", { title = "LionVim" })
+	notification("Codename: Panic Attack", "Information", { title = "LionVim" })
 end
 
 
