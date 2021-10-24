@@ -1,0 +1,80 @@
+local lsp_installer = require("nvim-lsp-installer")
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.o.updatetime = 0
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]]
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
+
+lsp_installer.settings {
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+}
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+vim.g.coq_settings = {
+	auto_start = "shut-up",
+	keymap = {
+		recommended = false,
+		jump_to_mark =  "<S-Tab>"
+	}
+}
+
+require("coq")
+
+local remap = vim.api.nvim_set_keymap
+local npairs = require('nvim-autopairs')
+
+npairs.setup({ map_bs = false })
+
+-- these mappings are coq recommended mappings unrelated to nvim-autopairs
+remap('i', '<esc>', [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
+remap('i', '<c-c>', [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, noremap = true })
+remap('i', '<tab>', [[pumvisible() ? "<c-n>" : "<tab>"]], { expr = true, noremap = true })
+remap('i', '<s-tab>', [[pumvisible() ? "<c-p>" : "<bs>"]], { expr = true, noremap = true })
+
+-- skip it, if you use another global object
+_G.MUtils= {}
+
+MUtils.CR = function()
+	if vim.fn.pumvisible() ~= 0 then
+		if vim.fn.complete_info({ 'selected' }).selected ~= -1 then
+			return npairs.esc('<c-y>')
+		else
+			return npairs.esc('<c-e>') .. npairs.autopairs_cr()
+		end
+	else
+		return npairs.autopairs_cr()
+	end
+end
+remap('i', '<cr>', 'v:lua.MUtils.CR()', { expr = true, noremap = true })
+
+MUtils.BS = function()
+	if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ 'mode' }).mode == 'eval' then
+		return npairs.esc('<c-e>') .. npairs.autopairs_bs()
+	else
+		return npairs.autopairs_bs()
+	end
+end
+
+remap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
