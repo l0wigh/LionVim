@@ -5,17 +5,21 @@ notification.setup({
 })
 
 local function update()
-	-- os.execute("rm ~/.config/lvim/_before_update_config.lua")
-	-- os.execute("rm ~/.config/lvim/lua/_before_update_solarboard.lua")
-	-- os.execute("mv ~/.config/lvim/config.lua ~/.config/lvim/_before_update_config.lua")
-	-- os.execute("mv ~/.config/lvim/lua/solarboard.lua ~/.config/lvim/lua/_before_update_solarboard.lua")
-	-- os.execute("cd ~/.config/lvim/ && { curl -O https://raw.githubusercontent.com/l0wigh/solarvim/master/config.lua ; cd ~; }")
-	-- os.execute("cd ~/.config/lvim/lua/ && { curl -O https://raw.githubusercontent.com/l0wigh/solarvim/master/solarboard.lua; cd ~; }")
+	os.execute("rm ~/.config/_old_lion")
+	os.execute("mv ~/.config/lionvim ~/.config/_old_lion")
+	os.execute("cd ~/.config/ && git clone https://github.com/l0wigh/LionVim temp && cp -r temp/lionvim . && rm temp")
 	vim.cmd("e ~/.config/lionvim/init.lua")
 	vim.cmd("so %")
+	vim.cmd [[
+		hi Normal guibg=none
+		hi LineNr guibg=none
+		hi SignColumn guibg=none
+		hi NormalNC guibg=none
+		hi MsgArea guibg=none
+		hi TelescopeBorder guibg=none
+		hi NvimTreeNormal guibg=none
+	]]
 	vim.cmd("PackerSync")
-	vim.cmd("PackerCompile")
-	vim.cmd("PackerInstall")
 	vim.cmd("BufferClose")
 	notification("Update finished, you might need to restart to see changes", "Information", { title = "LionVim" })
 end
