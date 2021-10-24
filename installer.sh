@@ -19,7 +19,7 @@ function installconfig {
 	cp ./lion $HOME/.local/bin/
 	sudo cp ./lion /usr/bin/
 	# sudo apt-get install --yes ripgrep python3-venv yarn npm git
-	lion --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+	lion +PackerInstall
 	echo "Installation finished"
 	echo "Use the command "lion" to RrrrRRRR"
 }
