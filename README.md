@@ -1,6 +1,6 @@
 # LionVim
 
-After using [https://lunarvim.org]("LunarVim") as a base for my SolarVim config.
+After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
 
 I wanted to make my own from 0 (another one yeah).
 
