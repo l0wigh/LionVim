@@ -62,6 +62,12 @@ wk.register({
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 			c = { "<cmd>PackerCompile<cr>", "Compile" },
 		},
+		c = {
+			name = "+Calc.nvim",
+			f = {"<cmd>call CalcFull()<CR>", "Calculate in the file"},
+			l = {"<cmd>call CalcLine()<CR>", "Calculate the current line"},
+			c = {"<cmd>lua require('calc').clear()<CR>", "Clear everything"},
+		},
 	}
 },
 	{ prefix = "<leader>", mode = "n", noremap = true }
