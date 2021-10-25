@@ -1,4 +1,5 @@
 local notification = require("notify")
+local popup = require("popup")
 
 notification.setup({
 	background_colour = "#000000"
@@ -28,8 +29,35 @@ local function update()
 end
 
 local function status()
-	notification("Version 0.0.1", "Information", { title = "LionVim" })
-	notification("Codename: Panic Attack", "Information", { title = "LionVim" })
+	local content = {
+		"    LionVim - Version: 0.0.1",
+		"    Codename: Panic Attack",
+		"",
+		"    It's been a long road, but I'm on the good track",
+		"",
+		"    Press 'q' to quit",
+	}
+	local width = 60
+    local height = 10
+    local borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+    local bufnr = vim.api.nvim_create_buf(false, false)
+	popup.create(bufnr, {
+        title = "LionVim Status",
+        highlight = "Normal",
+        line = math.floor(((vim.o.lines - height) / 2) - 1),
+        col = math.floor((vim.o.columns - width) / 2),
+        minwidth = width,
+        minheight = height,
+        borderchars = borderchars,
+	})
+	vim.api.nvim_buf_set_lines(bufnr, 0, #content, false, content)
+	vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "q",
+        ":q!<CR>",
+        { silent = true }
+    )
 end
 
 
