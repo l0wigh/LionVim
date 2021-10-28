@@ -123,6 +123,7 @@ cmp.setup({
 		})
 	},
 	sources = cmp.config.sources({
+		{ name = 'cmp_tabnine'},
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' }, -- For luasnip users.
 		{ name = 'nvim_lua' },
@@ -144,6 +145,7 @@ cmp.setup {
 		nvim_lua = "<API>",
 		path =     "<PATH>",
 		luasnip =  "<SNIP>",
+		cmp_tabnine =  "<TAB9>",
 	}})
   }
 }
@@ -156,3 +158,8 @@ require "lsp_signature".setup({
 })
 
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" } })                                                                                                                   
+
+require("nvim-autopairs.completion.cmp").setup({
+	map_cr = true, --map <CR> on insert mode
+	map_complete = true, --it will auto insert `(` after select function or method item
+})

@@ -20,6 +20,7 @@ require('packer').startup({function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'onsails/lspkind-nvim'
+	use {'tzachar/cmp-tabnine', run='./install.sh'}
 	-- use {
 	-- 	'ms-jpq/coq_nvim',
 	-- 	branch = "coq"
