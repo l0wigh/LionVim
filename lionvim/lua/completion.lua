@@ -159,7 +159,5 @@ require "lsp_signature".setup({
 
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" } })                                                                                                                   
 
-require("nvim-autopairs.completion.cmp").setup({
-	map_cr = true, --map <CR> on insert mode
-	map_complete = true, --it will auto insert `(` after select function or method item
-})
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
