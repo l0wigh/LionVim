@@ -30,10 +30,10 @@ end
 
 local function status()
 	local content = {
-		"    LionVim - Version: 0.0.1",
-		"    Codename: Panic Attack",
+		"    LionVim - Version: 0.0.2",
+		"    Codename: Ready to Roar",
 		"",
-		"    It's been a long road, but I'm on the good track",
+		"    I think I might deserve some rest",
 		"",
 		"    Press 'q' to quit",
 	}

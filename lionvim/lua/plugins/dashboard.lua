@@ -16,7 +16,7 @@ vim.g.dashboard_custom_header = {
 "     AMMMMM  ,        ~~~~~,aooooa,~~~~~~      MMMMMMMMMMM",
 "       YMMMb,d'         dMMMMMMMMMMMMMD,   a,, AMMMMMMMMMM",
 "                                                          ",
-"                                             LionVim 0.0.1"
+"                                             LionVim 0.0.2"
 }
 
 local custom_section = {
