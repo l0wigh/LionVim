@@ -8,7 +8,8 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'L0Wigh/NeoSolarized'
-	use { "~/.config/lionvim/liontools/", requires = { {"rcarriga/nvim-notify"} } }
+	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim" } } }
+	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -17,8 +18,6 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use "rafamadriz/friendly-snippets"
-	use "ray-x/lsp_signature.nvim"
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -27,14 +26,7 @@ return require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'onsails/lspkind-nvim'
-	-- use {
-	-- 	'ms-jpq/coq_nvim',
-	-- 	branch = "coq"
-	-- }
-	-- use {
-	-- 	'ms-jpq/coq.artifacts',
-	-- 	branch = "artifacts"
-	-- }
+	use {'tzachar/cmp-tabnine', run='./install.sh'}
 	use "windwp/nvim-autopairs"
 
 	-- Lines and stuff
@@ -62,6 +54,8 @@ return require('packer').startup(function(use)
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
+	use "rafamadriz/friendly-snippets"
+	use "ray-x/lsp_signature.nvim"
   if packer_bootstrap then
     require('packer').sync()
   end

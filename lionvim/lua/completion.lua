@@ -29,16 +29,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- vim.g.coq_settings = {
--- 	auto_start = "shut-up",
--- 	keymap = {
--- 		recommended = false,
--- 		jump_to_mark =  "<S-Tab>"
--- 	}
--- }
--- 
--- require("coq")
-
 local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
 

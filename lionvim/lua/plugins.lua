@@ -21,14 +21,6 @@ require('packer').startup({function()
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'onsails/lspkind-nvim'
 	use {'tzachar/cmp-tabnine', run='./install.sh'}
-	-- use {
-	-- 	'ms-jpq/coq_nvim',
-	-- 	branch = "coq"
-	-- }
-	-- use {
-	-- 	'ms-jpq/coq.artifacts',
-	-- 	branch = "artifacts"
-	-- }
 	use "windwp/nvim-autopairs"
 
 	-- Lines and stuff
