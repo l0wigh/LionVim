@@ -121,7 +121,7 @@ cmp.setup({
 		{ name = 'buffer' },
 	}),
 	experimental = {
-		ghost_text = true,
+		ghost_text = false, -- to false when using github copilot
 		native_menu = false
 	},
 })
@@ -151,3 +151,8 @@ require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvi
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
+
+vim.cmd [[
+	imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+	let g:copilot_no_tab_map = v:true
+]]

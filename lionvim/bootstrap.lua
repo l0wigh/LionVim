@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
 	use 'onsails/lspkind-nvim'
 	use {'tzachar/cmp-tabnine', run='./install.sh'}
 	use "windwp/nvim-autopairs"
+	use "github/copilot.vim"
 
 	-- Lines and stuff
 	use 'famiu/feline.nvim'

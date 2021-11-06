@@ -54,6 +54,7 @@ vim.cmd [[
 	autocmd VimEnter * hi TelescopeBorder guibg=none
 	autocmd VimEnter * hi NvimTreeNormal guibg=none
 	colorscheme NeoSolarized
+	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]
 
 require("plugins")
