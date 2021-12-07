@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'L0Wigh/NeoSolarized'
+	use 'LunarVim/onedarker'
 	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim" } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 

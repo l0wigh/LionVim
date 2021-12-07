@@ -2,11 +2,13 @@ require('packer').startup({function()
 	use 'wbthomason/packer.nvim'
 
 	use 'L0Wigh/NeoSolarized'
+
 	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim" } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use 'LunarVim/onedarker'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
