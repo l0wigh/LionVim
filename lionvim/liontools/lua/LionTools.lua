@@ -5,6 +5,42 @@ notification.setup({
 	background_colour = "#000000"
 })
 
+local function newFile()
+	local Input = require("nui.input")
+	local event = require("nui.utils.autocmd").event
+
+	local popup_options = {
+		relative = "editor",
+		position = "50%";
+		size = 40,
+		border = {
+			style = "rounded",
+			highlight = "FloatBorder",
+			text = {
+				top = "[Filename]",
+				top_align = "left",
+			},
+		},
+		win_options = {
+			winhighlight = "Normal:Normal",
+		},
+	}
+
+	local input = Input(popup_options, {
+		prompt = "> ",
+		default_value = "",
+		on_close = function()
+			print("No file created")
+		end,
+		on_submit = function(value)
+			print("New file: ", value)
+			vim.cmd("edit " .. value)
+		end,
+	})
+	input:mount()
+	input:map("n", "<Esc>", input.input_props.on_close, { noremap = true })
+end
+
 local function update()
 	os.execute("mv $HOME/.config/lionvim ~/.config/_old_lion")
 	os.execute("cd $HOME/.config/ && git clone https://github.com/l0wigh/LionVim temp && cp -r temp/lionvim .")
@@ -30,10 +66,10 @@ end
 
 local function status()
 	local content = {
-		"    LionVim - Version: 0.0.2",
-		"    Codename: Ready to Roar",
+		"    LionVim - Version: 0.0.3",
+		"    Codename: PTS",
 		"",
-		"    I think I might deserve some rest",
+		"    It screams like a 4 banger engine",
 		"",
 		"    Press 'q' to quit",
 	}
@@ -60,8 +96,8 @@ local function status()
     )
 end
 
-
 return {
 	update = update,
 	status = status,
+	newFile = newFile,
 }

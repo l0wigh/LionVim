@@ -46,13 +46,17 @@ vim.cmd [[
 
 	let mapleader = " "
 
-	autocmd VimEnter * hi Normal guibg=none
-	autocmd VimEnter * hi LineNr guibg=none
-	autocmd VimEnter * hi SignColumn guibg=none
-	autocmd VimEnter * hi NormalNC guibg=none
-	autocmd VimEnter * hi MsgArea guibg=none
-	autocmd VimEnter * hi TelescopeBorder guibg=none
-	autocmd VimEnter * hi NvimTreeNormal guibg=none
+	if exists("g:nvui")
+		set guifont=VictorMono\ Nerd\ Font:h16
+	else
+		autocmd VimEnter * hi Normal guibg=none
+		autocmd VimEnter * hi LineNr guibg=none
+		autocmd VimEnter * hi SignColumn guibg=none
+		autocmd VimEnter * hi NormalNC guibg=none
+		autocmd VimEnter * hi MsgArea guibg=none
+		autocmd VimEnter * hi TelescopeBorder guibg=none
+		autocmd VimEnter * hi NvimTreeNormal guibg=none
+	endif
 	colorscheme onedarker
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]

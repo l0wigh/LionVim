@@ -10,6 +10,10 @@ wk.register({
 		u = {"<cmd>call LionUpdate()<CR>", "Update the Lion"},
 		s = {"<cmd>call LionStatus()<CR>", "Lion Status"},
 	},
+	q = {
+		name = "+Quick Menu",
+		n = {"<cmd>call LionNewFile()<CR>", "Create a new file"},
+	},
 	w = {
 		name = "+Windows",
 		h = {"<cmd>split<CR>", "Horizontal Split"},

@@ -3,7 +3,7 @@ require('packer').startup({function()
 
 	use 'L0Wigh/NeoSolarized'
 
-	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim" } } }
+	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
@@ -14,7 +14,7 @@ require('packer').startup({function()
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use 'neovim/nvim-lspconfig'
+	use 'theprimeagen/vim-be-good'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/nvim-cmp'
@@ -64,11 +64,11 @@ config = {
 }})
 
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-    autocmd BufWritePost plugins.lua source <afile> | PackerInstall
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+autocmd BufWritePost plugins.lua source <afile> | PackerInstall
+augroup end
 ]])
 
 require("plugins.nvimtree")

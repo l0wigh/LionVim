@@ -8,18 +8,19 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'L0Wigh/NeoSolarized'
-	use 'LunarVim/onedarker'
-	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim" } } }
+
+	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use 'LunarVim/onedarker'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use 'neovim/nvim-lspconfig'
+	use 'theprimeagen/vim-be-good'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/nvim-cmp'

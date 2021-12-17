@@ -16,7 +16,7 @@ vim.g.dashboard_custom_header = {
 "     AMMMMM  ,        ~~~~~,aooooa,~~~~~~      MMMMMMMMMMM",
 "       YMMMb,d'         dMMMMMMMMMMMMMD,   a,, AMMMMMMMMMM",
 "                                                          ",
-"                                             LionVim 0.0.2"
+"                                             LionVim 0.0.3"
 }
 
 local custom_section = {
@@ -29,8 +29,8 @@ local custom_section = {
 		command = "Telescope oldfiles"
 	},
 	c = {
-		description = { "  Find Words   " },
-		command = "Telescope live_grep"
+		description = { "  New File     " },
+		command = "call LionNewFile()"
 	},
 	d = {
 		description = { "  Configuration" },
