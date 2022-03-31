@@ -2,32 +2,39 @@ require('packer').startup({function()
 	use 'wbthomason/packer.nvim'
 
 	use 'L0Wigh/NeoSolarized'
+	use '42Paris/42header'
+	use{
+		"catppuccin/nvim",
+		as = "catppuccin"
+	}
+	use 'folke/tokyonight.nvim'
+	use 'LunarVim/onedarker'
 
 	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
-	use 'LunarVim/onedarker'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use 'theprimeagen/vim-be-good'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-path'
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
+	use { 'ms-jpq/coq_nvim', branch = 'coq' }
+	use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+	use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 	use 'onsails/lspkind-nvim'
-	use {'tzachar/cmp-tabnine', run='./install.sh'}
+	use 'tami5/lspsaga.nvim'
 	use "windwp/nvim-autopairs"
-	use "github/copilot.vim"
+	use {
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup{}
+		end
+	}
 
 	-- Lines and stuff
-	use 'famiu/feline.nvim'
+	use 'nvim-lualine/lualine.nvim'
 
 	-- Telescope
 	use {
@@ -67,12 +74,22 @@ vim.cmd([[
 augroup packer_user_config
 autocmd!
 autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-autocmd BufWritePost plugins.lua source <afile> | PackerInstall
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
 augroup end
+
+let g:user42 = 'thomathi'
+let g:mail42 = 'thomathi@student.42mulhouse.fr'
+
 ]])
 
+require("lspsaga").setup()
+require("lualine").setup{
+	-- options = {
+	-- 	theme = "solarized"
+	-- }
+}
+
 require("plugins.nvimtree")
-require("plugins.feline")
 require("plugins.nvimcomment")
 require("plugins.dashboard")
 require("plugins.whichkey")

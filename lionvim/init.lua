@@ -57,9 +57,12 @@ vim.cmd [[
 		autocmd VimEnter * hi TelescopeBorder guibg=none
 		autocmd VimEnter * hi NvimTreeNormal guibg=none
 	endif
-	colorscheme onedarker
+	colorscheme tokyonight
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
+	set path+=/usr/local/vitasdk/arm-vita-eabi/include/**
+	set include+=/usr/local/vitasdk/arm-vita-eabi/include/**
 ]]
 
 require("plugins")
 require("completion")
+require("lsp-config")

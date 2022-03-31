@@ -32,14 +32,14 @@ wk.register({
 	l = {
 		name = "+LSP",
 		D = {":lua vim.lsp.buf.definition()<CR>", "Show definition"},
-		d = {":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show diagnostic for the line"},
-		i = {":lua vim.lsp.buf.implementation()<CR>", "Show implementation"},
-		s = {":lua vim.lsp.buf.signature_help()<CR>", "Show signature help"},
+		d = {":Lspsaga show_line_diagnostics<CR>", "Show diagnostic for the line"},
+		i = {":Lspsaga implement<CR>", "Show implementation"},
+		s = {":Lspsaga signature_help<CR>", "Show signature help"},
 		R = {":lua vim.lsp.buf.references()<CR>", "Show references"},
-		r = {":lua vim.lsp.buf.rename()<CR>", "Show rename"},
-		h = {":lua vim.lsp.buf.hover()<CR>", "Show hover"},
-		c = {":lua vim.lsp.buf.code_action()<CR>", "Show code action"},
-		n = {":lua vim.lsp.diagnostic.goto_next()<CR>", "Show next diagnostic"},
+		r = {":Lspsaga rename<CR>", "Show rename"},
+		h = {":Lspsaga hover_doc<CR>", "Show hover doc"},
+		c = {":Lspsaga code_action<CR>", "Show code action"},
+		n = {":Lspsaga diagnostic_jump_next<CR>", "Show next diagnostic"},
 	},
 	-- Vim tabs stuff mappings
 	t = {
