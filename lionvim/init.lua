@@ -59,8 +59,6 @@ vim.cmd [[
 	endif
 	colorscheme tokyonight
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
-	set path+=/usr/local/vitasdk/arm-vita-eabi/include/**
-	set include+=/usr/local/vitasdk/arm-vita-eabi/include/**
 ]]
 
 require("plugins")
