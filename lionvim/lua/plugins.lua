@@ -82,13 +82,10 @@ let g:mail42 = 'thomathi@student.42mulhouse.fr'
 
 ]])
 
-require("lspsaga").setup()
-require("lualine").setup{
-	-- options = {
-	-- 	theme = "solarized"
-	-- }
-}
 
+require("lspsaga").setup()
+
+require("plugins.lualine")
 require("plugins.nvimtree")
 require("plugins.nvimcomment")
 require("plugins.dashboard")
