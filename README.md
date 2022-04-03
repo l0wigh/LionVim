@@ -24,8 +24,6 @@ Requirements :
 * python3-venv
 * git
 
-The current version 0.0.4-2 might be broken, need more testing (sumneko_lua lsp is broken for sure [clunky autopair setup])
-
 # What's inside the configuration ?
 
 LSP support with :
