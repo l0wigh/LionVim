@@ -18,11 +18,13 @@ The installer is (for now) really simple and can't be used for a full install.
 
 Requirements :
 
-* Nvim 0.5.0 or higher
+* Nvim 0.7.0 or higher
 * yarn / npm
 * ripgrep
 * python3-venv
 * git
+
+The current version 0.0.4-2 might be broken, need more testing (sumneko_lua lsp is broken for sure [clunky autopair setup])
 
 # What's inside the configuration ?
 
@@ -36,8 +38,8 @@ LSP support with :
 
 UI with :
 
-- Custom NeoSolarized colorscheme
-- Feline
+- Custom NeoSolarized colorscheme + tokyonight + onedarker
+- Lualine
 - Barbar
 - Dashboard
 
@@ -48,7 +50,7 @@ Workflow tools :
 - Nvimtree
 - Which-key
 
-and probably some other plugins
+and probably some (many) other plugins
 
 Vim configuration :
 
