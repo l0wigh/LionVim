@@ -21,6 +21,7 @@ vim.diagnostic.config({
   }
 })
 
+-- vim.cmd [[autocmd! CursorHold * Lspsaga hover_doc]]
 vim.cmd [[autocmd! CursorHold,CursorHoldI * Lspsaga show_cursor_diagnostics]]
 vim.o.updatetime = 500
 

@@ -28,6 +28,7 @@ wk.register({
 		e = {"<cmd>BufferCloseAllButCurrent<CR>", "Close All But Current"},
 		a = {"<cmd>BufferCloseAllButPinned<CR>", "Close All But Pinned"},
 		c = {"<cmd>BufferClose!<CR>", "Close Buffer"},
+		b = {"<cmd>JABSOpen<CR>", "Buffer Selector"}
 	},
 	l = {
 		name = "+LSP",

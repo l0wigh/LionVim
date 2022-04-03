@@ -47,7 +47,8 @@ vim.cmd [[
 	let mapleader = " "
 
 	if exists("g:nvui")
-		set guifont=VictorMono\ Nerd\ Font:h16
+		set guifont=Victor\ Mono\ Nerd\ Font:h16
+		" set guifont=Cozette:h14
 	else
 		autocmd VimEnter * hi Normal guibg=none
 		autocmd VimEnter * hi LineNr guibg=none
@@ -56,6 +57,12 @@ vim.cmd [[
 		autocmd VimEnter * hi MsgArea guibg=none
 		autocmd VimEnter * hi TelescopeBorder guibg=none
 		autocmd VimEnter * hi NvimTreeNormal guibg=none
+		autocmd VimEnter * hi LspSagaFinderSelection guibg=none
+		autocmd VimEnter * hi LspFloatWinNormal guibg=none
+		autocmd VimEnter * hi DiagnosticError guibg=none
+		autocmd VimEnter * hi DiagnosticWarning guibg=none
+		autocmd VimEnter * hi DiagnosticInformation guibg=none
+		autocmd VimEnter * hi DiagnosticHint guibg=none
 	endif
 	colorscheme tokyonight
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
@@ -64,3 +71,7 @@ vim.cmd [[
 require("plugins")
 require("completion")
 require("lsp-config")
+
+vim.cmd [[ 
+	autocmd VimEnter,BufEnter,BufRead,InsertEnter,InsertLeave * so ~/.config/lionvim/lua/completion.lua
+]]

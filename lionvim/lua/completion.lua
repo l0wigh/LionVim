@@ -75,7 +75,8 @@ require "lsp_signature".setup({
 -- 	" let g:copilot_no_tab_map = v:true
 -- ]]
 
-
 vim.cmd [[
-	let g:coq_settings = { 'display.pum.fast_close': v:false, 'auto_start': v:true }
+	let g:coq_settings = { 'display.pum.fast_close': v:false, 'auto_start': v:true , 'display.ghost_text.enabled': v:true }
 ]]
+
+require("autopair")
