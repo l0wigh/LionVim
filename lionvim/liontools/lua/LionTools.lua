@@ -66,10 +66,10 @@ end
 
 local function status()
 	local content = {
-		"    LionVim - Version: 0.0.4",
-		"    Codename: Refactored",
+		"    LionVim - Version: 0.0.4-2",
+		"    Codename: Refactored++",
 		"",
-		"    Updated and might be even better now",
+		"    Updated and is better now",
 		"",
 		"    Press 'q' to quit",
 	}
