@@ -73,5 +73,5 @@ require("completion")
 require("lsp-config")
 
 vim.cmd [[ 
-	autocmd VimEnter,BufEnter,BufRead,InsertEnter,InsertLeave * so ~/.config/lionvim/lua/completion.lua
+	autocmd VimEnter,BufEnter,BufRead,InsertEnter,InsertLeave * so ~/.config/lionvim/lua/autopair.lua
 ]]
