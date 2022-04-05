@@ -71,7 +71,8 @@ vim.cmd [[
 require("plugins")
 require("completion")
 require("lsp-config")
-
+require("autopair")
+--
 vim.cmd [[ 
-	autocmd VimEnter,BufEnter,BufRead,InsertEnter,InsertLeave * so ~/.config/lionvim/lua/autopair.lua
+	autocmd VimEnter,BufRead,BufEnter,InsertEnter,InsertLeave * lua PairIT()
 ]]
