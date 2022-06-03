@@ -16,24 +16,24 @@ vim.g.dashboard_custom_header = {
 "     AMMMMM  ,        ~~~~~,aooooa,~~~~~~      MMMMMMMMMMM",
 "       YMMMb,d'         dMMMMMMMMMMMMMD,   a,, AMMMMMMMMMM",
 "                                                          ",
-"                                           LionVim 0.0.4-2"
+"											  LionVim 0.0.5"
 }
 
 local custom_section = {
 	a = {
-		description = { "  Find Files   " },
+		description = { "  Find Files       " },
 		command = "Telescope find_files"
 	},
 	b = {
-		description = { "  Recent Files " },
-		command = "Telescope oldfiles"
+		description = { "  Projects Manager " },
+		command = "call LionProjectsManager()"
 	},
 	c = {
-		description = { "  New File     " },
+		description = { "  New File         " },
 		command = "call LionNewFile()"
 	},
 	d = {
-		description = { "  Configuration" },
+		description = { "  Configuration    " },
 		command = ":e ~/.config/lionvim"
 	},
 }

@@ -1,32 +1,31 @@
 require('packer').startup({function()
 	use 'wbthomason/packer.nvim'
 
-	use 'L0Wigh/NeoSolarized'
 	use '42Paris/42header'
-	use{
-		"catppuccin/nvim",
-		as = "catppuccin"
-	}
-	use 'folke/tokyonight.nvim'
+
+	use 'L0Wigh/NeoSolarized'
 	use 'LunarVim/onedarker'
-	use 'sunjon/shade.nvim'
+	use 'Mofiqul/vscode.nvim'
 
 	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-vsnip'
+	use 'hrsh7th/vim-vsnip'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use { 'ms-jpq/coq_nvim', branch = 'coq' }
-	use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-	use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 	use 'onsails/lspkind-nvim'
 	use 'tami5/lspsaga.nvim'
-	use 'matbme/JABS.nvim'
 	use "windwp/nvim-autopairs"
 	use {
 		"folke/trouble.nvim",
@@ -34,21 +33,6 @@ require('packer').startup({function()
 			require("trouble").setup{}
 		end
 	}
-	use   {'lewis6991/hover.nvim', config = function()
-		require('hover').setup{
-			init = function()
-				-- Require providers
-				require('hover.providers.lsp')
-				-- require('hover.providers.gh')
-				-- require('hover.providers.man')
-				-- require('hover.providers.dictionary')
-			end,
-			preview_opts = {
-				border = nil
-			},
-			title = true
-		}
-	end}
 
 	-- Lines and stuff
 	use 'nvim-lualine/lualine.nvim'
@@ -59,6 +43,7 @@ require('packer').startup({function()
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	-- Explorer
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -75,7 +60,6 @@ require('packer').startup({function()
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-	use "rafamadriz/friendly-snippets"
 	use "ray-x/lsp_signature.nvim"
 
 
@@ -107,4 +91,4 @@ require("plugins.nvimtree")
 require("plugins.nvimcomment")
 require("plugins.dashboard")
 require("plugins.whichkey")
-require("plugins.jabs")
+require("nvim-autopairs").setup{}

@@ -9,6 +9,13 @@ wk.register({
 		name = "+LionVim",
 		u = {"<cmd>call LionUpdate()<CR>", "Update the Lion"},
 		s = {"<cmd>call LionStatus()<CR>", "Lion Status"},
+		p = {
+			name = "+Project Manager",
+			m = { "<cmd>call LionProjectsManager()<CR>", "Main Menu" },
+			n = { "<cmd>call LionNewProject()<CR>", "Add a Project" },
+			o = { "<cmd>call LionOpenProject()<CR>", "Open a Project" },
+			d = { "<cmd>call LionDelProject()<CR>", "Delete a Project" },
+		}
 	},
 	q = {
 		name = "+Quick Menu",
@@ -28,7 +35,7 @@ wk.register({
 		e = {"<cmd>BufferCloseAllButCurrent<CR>", "Close All But Current"},
 		a = {"<cmd>BufferCloseAllButPinned<CR>", "Close All But Pinned"},
 		c = {"<cmd>BufferClose!<CR>", "Close Buffer"},
-		b = {"<cmd>JABSOpen<CR>", "Buffer Selector"}
+		b = {"<cmd>Telescope buffers show_all_buffers=true<CR>", "Buffer Selector"}
 	},
 	l = {
 		name = "+LSP",

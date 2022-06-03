@@ -38,6 +38,32 @@ require "lsp_signature".setup({
 -- 	" let g:copilot_no_tab_map = v:true
 -- ]]
 
-vim.cmd [[
-	let g:coq_settings = { 'display.pum.fast_close': v:false, 'auto_start': v:true , 'display.ghost_text.enabled': v:true }
-]]
+local cmp = require("cmp")
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
+	mapping = cmp.mapping.preset.insert({
+		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<Esc>"] = cmp.mapping.abort(),
+	}),
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "vsnip" },
+	}, {
+		{ name = "buffer" },
+	})
+})
+
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+

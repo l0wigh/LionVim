@@ -47,32 +47,31 @@ vim.cmd [[
 	let mapleader = " "
 
 	if exists("g:nvui")
-		set guifont=Victor\ Mono\ Nerd\ Font:h16
+		"set guifont=JetBrains\ Mono:h14
+		set guifont=VictorMono\ NF:h14
 		" set guifont=Cozette:h14
 	else
-		autocmd VimEnter * hi Normal guibg=none
-		autocmd VimEnter * hi LineNr guibg=none
-		autocmd VimEnter * hi SignColumn guibg=none
-		autocmd VimEnter * hi NormalNC guibg=none
-		autocmd VimEnter * hi MsgArea guibg=none
-		autocmd VimEnter * hi TelescopeBorder guibg=none
-		autocmd VimEnter * hi NvimTreeNormal guibg=none
-		autocmd VimEnter * hi LspSagaFinderSelection guibg=none
-		autocmd VimEnter * hi LspFloatWinNormal guibg=none
-		autocmd VimEnter * hi DiagnosticError guibg=none
-		autocmd VimEnter * hi DiagnosticWarning guibg=none
-		autocmd VimEnter * hi DiagnosticInformation guibg=none
-		autocmd VimEnter * hi DiagnosticHint guibg=none
+		" autocmd VimEnter * hi Normal guibg=none
+		" autocmd VimEnter * hi LineNr guibg=none
+		" autocmd VimEnter * hi SignColumn guibg=none
+		" autocmd VimEnter * hi NormalNC guibg=none
+		" autocmd VimEnter * hi MsgArea guibg=none
+		" autocmd VimEnter * hi TelescopeBorder guibg=none
+		" autocmd VimEnter * hi NvimTreeNormal guibg=none
+		" autocmd VimEnter * hi LspSagaFinderSelection guibg=none
+		" autocmd VimEnter * hi LspFloatWinNormal guibg=none
+		" autocmd VimEnter * hi DiagnosticError guibg=none
+		" autocmd VimEnter * hi DiagnosticWarning guibg=none
+		" autocmd VimEnter * hi DiagnosticInformation guibg=none
+		" autocmd VimEnter * hi DiagnosticHint guibg=none
 	endif
-	colorscheme tokyonight
+	"set background=light
+	"colorscheme prism
+	"colorscheme pywal
+	colorscheme vscode
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]
 
 require("plugins")
 require("completion")
 require("lsp-config")
-require("autopair")
---
-vim.cmd [[ 
-	autocmd VimEnter,BufRead,BufEnter,InsertEnter,InsertLeave * lua PairIT()
-]]
