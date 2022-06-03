@@ -273,7 +273,7 @@ local function status()
 		"    LionVim - Version: 0.0.5",
 		"    Codename: Turbo 16",
 		"",
-		"    It's reliable ans working",
+		"    It's reliable and working",
 		"",
 		"    Press 'q' to quit",
 	}
