@@ -7,28 +7,29 @@ end
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
-	use 'L0Wigh/NeoSolarized'
 	use '42Paris/42header'
-	use{
-		"catppuccin/nvim",
-		as = "catppuccin"
-	}
-	use 'folke/tokyonight.nvim'
+
+	use 'L0Wigh/NeoSolarized'
 	use 'LunarVim/onedarker'
+	use 'Mofiqul/vscode.nvim'
 
 	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
 	use  "$HOME/.config/lionvim/calc.nvim/"
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-vsnip'
+	use 'hrsh7th/vim-vsnip'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use { 'ms-jpq/coq_nvim', branch = 'coq' }
-	use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-	use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 	use 'onsails/lspkind-nvim'
 	use 'tami5/lspsaga.nvim'
 	use "windwp/nvim-autopairs"
@@ -48,6 +49,7 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	-- Explorer
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -64,7 +66,6 @@ return require('packer').startup(function(use)
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-	use "rafamadriz/friendly-snippets"
 	use "ray-x/lsp_signature.nvim"
   if packer_bootstrap then
     require('packer').sync()

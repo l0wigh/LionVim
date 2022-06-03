@@ -62,8 +62,6 @@ require('packer').startup({function()
 	}
 	use "ray-x/lsp_signature.nvim"
 
-
-
 end,
 config = {
 	display = {

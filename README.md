@@ -1,4 +1,4 @@
-# LionVim
+# LionVim 0.0.5
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
 
@@ -18,11 +18,9 @@ The installer is (for now) really simple and can't be used for a full install.
 
 Requirements :
 
-* Nvim 0.7.0 or higher
+* Nvim 0.8.0 or higher
 * yarn / npm
 * ripgrep
-* python3-venv
-* git
 
 # What's inside the configuration ?
 
@@ -30,13 +28,13 @@ LSP support with :
 
 - lspconfig
 - lsp-installer
-- coq.nvim (yeah, not nvim-cmp)
+- nvim-cmp
 - treesitter
 - lsp-colors
 
 UI with :
 
-- Custom NeoSolarized colorscheme + tokyonight + onedarker
+- Custom NeoSolarized colorscheme + vscode colorscheme + onedarker
 - Lualine
 - Barbar
 - Dashboard
