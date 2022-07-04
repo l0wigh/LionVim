@@ -25,7 +25,7 @@ require('packer').startup({function()
 
 	use { '$HOME/.config/lionvim/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
 	use  '$HOME/.config/lionvim/calc.nvim/'
-	use  '$HOME/.config/lionvim/lionpackages/'
+	-- use  '$HOME/.config/lionvim/lionpackages/'
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
