@@ -2,7 +2,6 @@ require('packer').startup({function()
 
 	-- Plugins in testing
 	use 'tpope/vim-surround'
-	-- use 'github/copilot.vim'
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v1.3', -- optional but strongly recommended
@@ -13,6 +12,7 @@ require('packer').startup({function()
 			}
 		end
 	}
+	use 'simrat39/symbols-outline.nvim'
 
 	use 'wbthomason/packer.nvim'
 
@@ -20,8 +20,8 @@ require('packer').startup({function()
 
 	-- Colorschemes
 	use 'Mofiqul/vscode.nvim'
-	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
-	-- use  '$HOME/projects/vanessa/'
+	-- use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
+	use  { '$HOME/projects/vanessa/', requires = { 'rktjmp/lush.nvim' } }
 
 	use { '$HOME/.config/lionvim/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
 	use  '$HOME/.config/lionvim/calc.nvim/'
@@ -102,3 +102,4 @@ require("plugins.nvimcomment")
 require("plugins.dashboard")
 require("plugins.whichkey")
 require("nvim-autopairs").setup{}
+require("plugins.symbols")

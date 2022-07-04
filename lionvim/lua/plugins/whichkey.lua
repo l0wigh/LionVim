@@ -6,6 +6,7 @@ wk.register({
 	["e"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
 	["u"] = { "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", "Undotree" },
 	["T"] = { "<cmd>call LionTerminal()<CR>", "Open Terminal" },
+	["s"] = { "<cmd>SymbolsOutline<CR>", "Open Symbols Tree" },
 	h = {
 		name = "+Hop",
 		f = { "<cmd>lua require('hop').hint_char1()<CR>", "Hop to a char" },
