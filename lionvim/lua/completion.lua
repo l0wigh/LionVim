@@ -32,25 +32,41 @@ require "lsp_signature".setup({
 	hint_prefix = "🦁 "
 })
 
--- vim.cmd [[
--- 	" let b:copilot_enabled = v:false
--- 	" imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
--- 	" let g:copilot_no_tab_map = v:true
--- ]]
+vim.cmd [[
+	" let b:copilot_enabled = v:false
+	" imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+	" let g:copilot_no_tab_map = v:true
+]]
 
 local cmp = require("cmp")
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.setup({
+	formatting = {
+		format = lspkind.cmp_format({
+			mode = "symbol_text"
+		}),
+	},
+	-- formatting = {
+	-- 	fields = { "abbr", "kind", "menu" },
+	-- 	format = function(entry, vim_item)
+	-- 		local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+	-- 		local strings = vim.split(kind.kind, "%s", { trimempty = true })
+	-- 		kind.kind = " " .. strings[1] .. " "
+	-- 		kind.menu = " [" .. strings[2] .. "] "
+	--
+	-- 		return kind
+	-- 	end,
+	-- },
     snippet = {
       expand = function(args)
         vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       end,
     },
-    window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
+	--     window = {
+	-- 	completion = cmp.config.window.bordered(),
+	-- 	documentation = cmp.config.window.bordered(),
+	-- },
 	mapping = cmp.mapping.preset.insert({
 		["<Tab>"] = cmp.mapping.select_next_item(),
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
@@ -64,7 +80,7 @@ cmp.setup({
 		{ name = "cmdline" },
 	}, {
 		{ name = "buffer" },
-	})
+	}),
 })
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))

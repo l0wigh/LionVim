@@ -5,6 +5,20 @@ notification.setup({
 	background_colour = "#000000"
 })
 
+local function lionterminal()
+	local Split = require("nui.split")
+
+	local split = Split({
+		relative = "editor",
+		position = "bottom",
+		size = "25%",
+	})
+
+	-- mount/open the component
+	split:mount()
+	vim.cmd("term")
+end
+
 local function deleteproject(mode)
 
 	local Menu = require("nui.menu")
@@ -17,6 +31,8 @@ local function deleteproject(mode)
 		list_name[#list_name + 1] = Menu.item(line, { id = counter })
 		counter = counter + 1
 	end
+
+	counter = 1
 
 	for line in io.lines("/home/thomas/.config/lionvim/projects-folders.lion") do
 		list_folder[#list_folder + 1] = line
@@ -82,6 +98,8 @@ local function selectproject(mode)
 		list_name[#list_name + 1] = Menu.item(line, { id = counter })
 		counter = counter + 1
 	end
+
+	counter = 1
 
 	for line in io.lines("/home/thomas/.config/lionvim/projects-folders.lion") do
 		list_folder[#list_folder + 1] = line
@@ -270,10 +288,10 @@ end
 
 local function status()
 	local content = {
-		"    LionVim - Version: 0.0.5",
-		"    Codename: Turbo 16",
+		"    LionVim - Version: 0.0.6",
+		"    Codename: EP6DTS",
 		"",
-		"    It's reliable and working",
+		"    Working, but for how long ?",
 		"",
 		"    Press 'q' to quit",
 	}
@@ -365,5 +383,6 @@ return {
 	newprojects_folder = newprojects_folder,
 	selectproject = selectproject,
 	projectsmanager = Projectsmanager,
-	deleteproject = deleteproject
+	deleteproject = deleteproject,
+	lionterminal = lionterminal
 }

@@ -1,4 +1,4 @@
-# LionVim 0.0.5
+# LionVim 0.0.6
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
 
@@ -31,13 +31,16 @@ LSP support with :
 - nvim-cmp
 - treesitter
 - lsp-colors
+- lspsaga
+- lspkind
 
 UI with :
 
-- Custom NeoSolarized colorscheme + vscode colorscheme + onedarker
+- Vanessa coloscheme (made by me) + vscode colorscheme
 - Lualine
 - Barbar
 - Dashboard
+- nui
 
 Workflow tools :
 
@@ -45,6 +48,7 @@ Workflow tools :
 - Undotree
 - Nvimtree
 - Which-key
+- Hop.nvim
 
 and probably some (many) other plugins
 
@@ -55,7 +59,6 @@ Vim configuration :
 - 4 chars long hard tabs
 - no swap files, undo folder (~/.config/lionvim/undodir)
 - no wrap
-- transparent background
 - the most important setup : jklm instead of hjkl (because french keyboard) 
 - and other stuff...
 

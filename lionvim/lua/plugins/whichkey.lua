@@ -5,6 +5,14 @@ wk.register({
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 	["e"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
 	["u"] = { "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", "Undotree" },
+	["T"] = { "<cmd>call LionTerminal()<CR>", "Open Terminal" },
+	h = {
+		name = "+Hop",
+		f = { "<cmd>lua require('hop').hint_char1()<CR>", "Hop to a char" },
+		w = { "<cmd>HopWord<CR>", "Hop to a word" },
+		l = { "<cmd>HopLine<CR>", "Hop to a line" },
+		p = { "<cmd>HopPattern<CR>", "Hop to a pattern" },
+	},
 	L = {
 		name = "+LionVim",
 		u = {"<cmd>call LionUpdate()<CR>", "Update the Lion"},

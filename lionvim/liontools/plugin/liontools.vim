@@ -33,6 +33,11 @@ fun! LionDelProject()
 	lua require("LionTools").deleteproject()
 endfun
 
+fun! LionTerminal()
+	lua for k in pairs(package.loaded) do if k:match('^LionTerminal') then package.loaded[k] = nil end end
+	lua require("LionTools").lionterminal()
+endfun
+
 augroup LionTools
 	autocmd!
 augroup END

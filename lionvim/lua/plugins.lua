@@ -1,14 +1,31 @@
 require('packer').startup({function()
+
+	-- Plugins in testing
+	use 'tpope/vim-surround'
+	-- use 'github/copilot.vim'
+	use {
+		'phaazon/hop.nvim',
+		branch = 'v1.3', -- optional but strongly recommended
+		config = function()
+			require'hop'.setup {
+				keys = 'etovxqpdygfblzhckisuran',
+				quit_key = '<Esc>'
+			}
+		end
+	}
+
 	use 'wbthomason/packer.nvim'
 
 	use '42Paris/42header'
 
-	use 'L0Wigh/NeoSolarized'
-	use 'LunarVim/onedarker'
+	-- Colorschemes
 	use 'Mofiqul/vscode.nvim'
+	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
+	-- use  '$HOME/projects/vanessa/'
 
-	use { "$HOME/.config/lionvim/liontools/", requires = { { "rcarriga/nvim-notify", "nvim-lua/popup.nvim", 'MunifTanjim/nui.nvim' } } }
-	use  "$HOME/.config/lionvim/calc.nvim/"
+	use { '$HOME/.config/lionvim/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
+	use  '$HOME/.config/lionvim/calc.nvim/'
+	use  '$HOME/.config/lionvim/lionpackages/'
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -26,13 +43,7 @@ require('packer').startup({function()
 	}
 	use 'onsails/lspkind-nvim'
 	use 'tami5/lspsaga.nvim'
-	use "windwp/nvim-autopairs"
-	use {
-		"folke/trouble.nvim",
-		config = function()
-			require("trouble").setup{}
-		end
-	}
+	use 'windwp/nvim-autopairs'
 
 	-- Lines and stuff
 	use 'nvim-lualine/lualine.nvim'
@@ -49,18 +60,18 @@ require('packer').startup({function()
 		requires = 'kyazdani42/nvim-web-devicons',
 	}
 
-	use "terrortylor/nvim-comment"
+	use 'terrortylor/nvim-comment'
 	use 'folke/lsp-colors.nvim'
 	use 'glepnir/dashboard-nvim'
 
-	use "folke/which-key.nvim"
-	use "mbbill/undotree"
+	use 'folke/which-key.nvim'
+	use 'mbbill/undotree'
 
 	use {
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-	use "ray-x/lsp_signature.nvim"
+	use 'ray-x/lsp_signature.nvim'
 
 end,
 config = {
@@ -78,6 +89,7 @@ augroup end
 
 let g:user42 = 'thomathi'
 let g:mail42 = 'thomathi@student.42mulhouse.fr'
+let g:sneak#label = 1
 
 ]])
 

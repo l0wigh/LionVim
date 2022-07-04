@@ -21,6 +21,8 @@ vim.cmd [[
 	set listchars=tab:\∙\ 
 	set timeoutlen=100
 	set noerrorbells
+	set cursorline
+	set laststatus=3
 
 	nnoremap j h
 	nnoremap k j
@@ -42,14 +44,19 @@ vim.cmd [[
 	nnoremap <C-w>m <C-w>l
 	nnoremap <C-w>h <C-w>m
 
+	tnoremap jk <C-\><C-n>
+
 	inoremap jk <Esc>
 
 	let mapleader = " "
 
-	if exists("g:nvui")
-		"set guifont=JetBrains\ Mono:h14
-		set guifont=VictorMono\ NF:h14
+	if exists("g:neovide")
+		set guifont=JetBrains\ Mono:h16
+		"set guifont=VictorMono\ NF:h16
 		" set guifont=Cozette:h14
+		nmap <C-shift-c> "+y
+		vmap <C-shift-c> "+y
+		nmap <C-shift-v> "+p
 	else
 		" autocmd VimEnter * hi Normal guibg=none
 		" autocmd VimEnter * hi LineNr guibg=none
@@ -68,7 +75,8 @@ vim.cmd [[
 	"set background=light
 	"colorscheme prism
 	"colorscheme pywal
-	colorscheme vscode
+	let g:enfocado_style = 'neon'
+	colorscheme vanessa
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]
 
