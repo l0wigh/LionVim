@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
 			}
 		end
 	}
-	use 'simrat39/symbols-outline.nvim'
 
 	use 'wbthomason/packer.nvim'
 
