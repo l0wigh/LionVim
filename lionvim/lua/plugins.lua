@@ -1,7 +1,11 @@
 require('packer').startup({function()
+	use 'wbthomason/packer.nvim' -- needed to avoid issues with packer
 
-	-- Plugins in testing
-	use 'tpope/vim-surround'
+	-- LionVim Tools
+	use { '$HOME/.config/lionvim/lionplugs/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
+	use  'L0Wigh/calc.nvim'
+
+	-- Hop everywhere you want
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v1.3', -- optional but strongly recommended
@@ -12,20 +16,12 @@ require('packer').startup({function()
 			}
 		end
 	}
-	use 'simrat39/symbols-outline.nvim'
 
-	use 'wbthomason/packer.nvim'
-
-	use '42Paris/42header'
+	use 'github/copilot.vim'
+	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
-	use 'Mofiqul/vscode.nvim'
 	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
-	-- use  { '$HOME/projects/vanessa/', requires = { 'rktjmp/lush.nvim' } }
-
-	use { '$HOME/.config/lionvim/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
-	use  '$HOME/.config/lionvim/calc.nvim/'
-	-- use  '$HOME/.config/lionvim/lionpackages/'
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -34,8 +30,10 @@ require('packer').startup({function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-vsnip'
-	use 'hrsh7th/vim-vsnip'
+	use 'hrsh7th/cmp-copilot'
+	use 'L3MON4D3/LuaSnip'
+	use "rafamadriz/friendly-snippets"
+	use 'saadparwaiz1/cmp_luasnip'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -43,7 +41,10 @@ require('packer').startup({function()
 	}
 	use 'onsails/lspkind-nvim'
 	use 'tami5/lspsaga.nvim'
-	use 'windwp/nvim-autopairs'
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 
 	-- Lines and stuff
 	use 'nvim-lualine/lualine.nvim'
@@ -60,18 +61,21 @@ require('packer').startup({function()
 		requires = 'kyazdani42/nvim-web-devicons',
 	}
 
-	use 'terrortylor/nvim-comment'
-	use 'folke/lsp-colors.nvim'
-	use 'glepnir/dashboard-nvim'
+	use 'terrortylor/nvim-comment' -- easy comment with shortcuts
+	use 'folke/lsp-colors.nvim' -- be sure to have lsp colors everywhere
+	-- use { 'glepnir/dashboard-nvim', lock = true } -- old dashboard that is still working with LionVim config
+	use 'L0Wigh/lionboard.nvim'
 
-	use 'folke/which-key.nvim'
-	use 'mbbill/undotree'
+	use 'folke/which-key.nvim' -- pressing space to have shortcuts is great
+	use 'mbbill/undotree' -- Undo > backup / swap
 
+	-- just to be sure that I know what is opened
 	use {
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-	use 'ray-x/lsp_signature.nvim'
+
+	use 'ray-x/lsp_signature.nvim' -- Little lion that help you with function signatures
 
 end,
 config = {
@@ -80,26 +84,18 @@ config = {
 	}
 }})
 
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-
-let g:user42 = 'thomathi'
-let g:mail42 = 'thomathi@student.42mulhouse.fr'
-let g:sneak#label = 1
-
-]])
-
-
-require("lspsaga").setup()
+require("nvim-autopairs").setup{}
 
 require("plugins.lualine")
+require("plugins.42header")
+require("plugins.lsp_installer")
+require("plugins.lspsaga")
+require("plugins.treesitter")
+require("plugins.lsp_signature")
+require("plugins.nvim_cmp")
+require("plugins.copilot")
 require("plugins.nvimtree")
 require("plugins.nvimcomment")
 require("plugins.dashboard")
 require("plugins.whichkey")
-require("nvim-autopairs").setup{}
 require("plugins.symbols")

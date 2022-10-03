@@ -5,9 +5,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-	-- Plugins in testing
-	use 'tpope/vim-surround'
-	-- use 'github/copilot.vim'
+	use 'wbthomason/packer.nvim' -- needed to avoid issues with packer
+
+	-- LionVim Tools
+	use { '$HOME/.config/lionvim/lionplugs/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
+	use  'L0Wigh/calc.nvim'
+
+	-- Hop everywhere you want
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v1.3', -- optional but strongly recommended
@@ -19,18 +23,11 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use 'wbthomason/packer.nvim'
-
-	use '42Paris/42header'
+	use 'github/copilot.vim'
+	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
-	use 'Mofiqul/vscode.nvim'
 	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
-	-- use  '$HOME/projects/vanessa/'
-
-	use { '$HOME/.config/lionvim/liontools/', requires = { { 'rcarriga/nvim-notify', 'nvim-lua/popup.nvim', 'MunifTanjim/nui.nvim' } } }
-	use  '$HOME/.config/lionvim/calc.nvim/'
-	-- use  '$HOME/.config/lionvim/lionpackages/'
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -39,8 +36,10 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-vsnip'
-	use 'hrsh7th/vim-vsnip'
+	use 'hrsh7th/cmp-copilot'
+	use 'L3MON4D3/LuaSnip'
+	use "rafamadriz/friendly-snippets"
+	use 'saadparwaiz1/cmp_luasnip'
 	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -48,7 +47,10 @@ return require('packer').startup(function(use)
 	}
 	use 'onsails/lspkind-nvim'
 	use 'tami5/lspsaga.nvim'
-	use 'windwp/nvim-autopairs'
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 
 	-- Lines and stuff
 	use 'nvim-lualine/lualine.nvim'
@@ -65,18 +67,21 @@ return require('packer').startup(function(use)
 		requires = 'kyazdani42/nvim-web-devicons',
 	}
 
-	use 'terrortylor/nvim-comment'
-	use 'folke/lsp-colors.nvim'
-	use 'glepnir/dashboard-nvim'
+	use 'terrortylor/nvim-comment' -- easy comment with shortcuts
+	use 'folke/lsp-colors.nvim' -- be sure to have lsp colors everywhere
+	use 'L0Wigh/lionboard.nvim'
 
-	use 'folke/which-key.nvim'
-	use 'mbbill/undotree'
+	use 'folke/which-key.nvim' -- pressing space to have shortcuts is great
+	use 'mbbill/undotree' -- Undo > backup / swap
 
+	-- just to be sure that I know what is opened
 	use {
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-	use 'ray-x/lsp_signature.nvim'
+
+	use 'ray-x/lsp_signature.nvim' -- Little lion that help you with function signatures
+
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -1,6 +1,6 @@
 vim.g.dashboard_default_executive = 'telescope'
 vim.g.dashboard_custom_header = {
-" `VMM, AMMMV'  ,AMMMMMMMMMMMMMMMMMMMMMMM,                ,",
+" `VMM, AMMMV'  ,AMMMMMMMMMMMMMMMMMMMMMMM,            1   ,",
 "  VMMMmMMV'  ,AMY~~''  'MMMMMMMMMMMM' '~~             ,aMM",
 "  `YMMMM'   AMM'        `VMMMMMMMMP'_              A,aMMMM",
 "   AMMM'    VMMA. YVmmmMMMMMMMMMMML MmmmY          MMMMMMM",
@@ -16,7 +16,7 @@ vim.g.dashboard_custom_header = {
 "     AMMMMM  ,        ~~~~~,aooooa,~~~~~~      MMMMMMMMMMM",
 "       YMMMb,d'         dMMMMMMMMMMMMMD,   a,, AMMMMMMMMMM",
 "                                                          ",
-"											  LionVim 0.0.6"
+"											  LionVim 0.1.0"
 }
 
 local custom_section = {
