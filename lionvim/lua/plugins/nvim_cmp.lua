@@ -7,7 +7,6 @@ vim.cmd [[
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
 " blue
 highlight! link CmpItemAbbrMatch String
-highlight! CmpItemAbbrMatch gui=NONE
 highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
 ]]
 
