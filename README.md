@@ -1,4 +1,4 @@
-[[https://github.com/L0Wigh/lionvim/blob/lionvim.png|alt=lionvim logo]]
+![LionVim logo](https://raw.githubusercontent.com/l0wigh/lionvim/master/lionvim.png)
 
 # LionVim 0.1.0
 
