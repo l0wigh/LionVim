@@ -8,13 +8,11 @@ Since I loved LunarVim setup, many of the plugins and keybinds used in LionVim a
 
 # Essential Informations
 
-This is a very customized Nvim configuration. It will probably not be nice for most of the peoples.
+This is a very customized Nvim configuration. It will probably not be nice for most of the people.
 
-I don't think I'll take any PR, issues, or enhancement stuff.
+This repo is mainly here for me, and to help people to see how to configure nvim with modern plugins and lua files.
 
-This repo is mainly here for me, and to help peoples to see how to configure nvim with modern plugins and lua files.
-
-The installer is (for now) really simple and can't be used for a full install.
+The installer is (for now) really simple and might be not working properly.
 
 Requirements :
 
