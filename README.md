@@ -1,3 +1,5 @@
+[[https://github.com/L0Wigh/lionvim/blob/lionvim.png|alt=lionvim logo]]
+
 # LionVim 0.1.0
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
