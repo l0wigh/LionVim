@@ -1,10 +1,10 @@
-# LionVim 0.0.6
+# LionVim 0.1.0
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
 
 I wanted to make my own from 0 (another one yeah).
 
-Since I loved LunarVim setup, many of the plugins used in LionVim are in LunarVim. I just made my own sauce.
+Since I loved LunarVim setup, many of the plugins and keybinds used in LionVim are in LunarVim. I just made my own sauce.
 
 # Essential Informations
 
@@ -36,7 +36,7 @@ LSP support with :
 
 UI with :
 
-- Vanessa coloscheme (made by me) + vscode colorscheme
+- Vanessa coloscheme (made by me)
 - Lualine
 - Barbar
 - Dashboard
@@ -57,7 +57,8 @@ Vim configuration :
 - numbers + relative numbers
 - true colors
 - 4 chars long hard tabs
-- no swap files, undo folder (~/.config/lionvim/undodir)
+- no swap files
+- undo folder (~/.config/lionvim/undodir)
 - no wrap
 - the most important setup : jklm instead of hjkl (because french keyboard) 
 - and other stuff...
@@ -66,4 +67,4 @@ Vim configuration :
 
 It should not broke your nvim installation but be carefull, some plugins might be installed outside my config folder like dashboard.
 
-Never try this config with backing up your pervious nvim stuff.
+Never try this config without backing up your previous nvim config.
