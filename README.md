@@ -1,5 +1,6 @@
+<p align=center>
 ![LionVim logo](https://raw.githubusercontent.com/l0wigh/lionvim/master/lionvim.png)
-
+</p>
 # LionVim 0.1.0
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
