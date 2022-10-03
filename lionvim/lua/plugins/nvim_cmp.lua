@@ -2,10 +2,18 @@ local lspkind = require('lspkind')
 local cmp = require("cmp")
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
+vim.cmd [[
+" gray
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+" blue
+highlight! link CmpItemAbbrMatch String
+highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+]]
+
 cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol_text"
+			mode = "symbol_text",
 		}),
 	},
     snippet = {

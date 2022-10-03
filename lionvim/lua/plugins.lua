@@ -89,7 +89,7 @@ require("nvim-autopairs").setup{}
 require("plugins.lualine")
 require("plugins.42header")
 require("plugins.lsp_installer")
-require("plugins.lspsaga")
+-- require("plugins.lspsaga")
 require("plugins.treesitter")
 require("plugins.lsp_signature")
 require("plugins.nvim_cmp")
