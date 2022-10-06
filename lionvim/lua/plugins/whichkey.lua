@@ -50,7 +50,8 @@ wk.register({
 		D = {":lua vim.lsp.buf.definition()<CR>", "Show definition"},
 		d = {":Lspsaga show_line_diagnostics<CR>", "Show diagnostic for the line"},
 		i = {":Lspsaga implement<CR>", "Show implementation"},
-		s = {":Lspsaga signature_help<CR>", "Show signature help"},
+		s = {":Telescope lsp_document_symbols<CR>", "Show document symbols"},
+		S = {":Telescope lsp_workspace_symbols<CR>", "Show workspace symbols"},
 		R = {":lua vim.lsp.buf.references()<CR>", "Show references"},
 		r = {":Lspsaga rename<CR>", "Show rename"},
 		h = {":Lspsaga hover_doc<CR>", "Show hover doc"},
@@ -73,6 +74,8 @@ wk.register({
 			h = {"<cmd>Telescope help_tags<cr>", "Help pages" },
 			c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
 			b = {"<cmd>Telescope buffers show_all_buffers=true<cr>", "Show Buffers"},
+			l = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
+			m = {"<cmd>Telescope marks<cr>", "Show Marks"},
 		},
 		p = {
 			name = "+Packer",

@@ -1,5 +1,7 @@
 local notification = require("notify")
 local popup = require("popup")
+local home = os.getenv("HOME")
+local lionfolder = home .. "/.config/lionvim/"
 
 notification.setup({
 	background_colour = "#000000"
@@ -27,14 +29,14 @@ local function deleteproject(mode)
 	local counter = 1
 	local list_folder = {}
 
-	for line in io.lines("/home/thomas/.config/lionvim/projects-names.lion") do
+	for line in io.lines(lionfolder .. "projects-names.lion") do
 		list_name[#list_name + 1] = Menu.item(line, { id = counter })
 		counter = counter + 1
 	end
 
 	counter = 1
 
-	for line in io.lines("/home/thomas/.config/lionvim/projects-folders.lion") do
+	for line in io.lines(lionfolder .. "projects-folders.lion") do
 		list_folder[#list_folder + 1] = line
 		counter = counter + 1
 	end
@@ -94,14 +96,14 @@ local function selectproject(mode)
 	local counter = 1
 	local list_folder = {}
 
-	for line in io.lines("/home/thomas/.config/lionvim/projects-names.lion") do
+	for line in io.lines(lionfolder .. "projects-names.lion") do
 		list_name[#list_name + 1] = Menu.item(line, { id = counter })
 		counter = counter + 1
 	end
 
 	counter = 1
 
-	for line in io.lines("/home/thomas/.config/lionvim/projects-folders.lion") do
+	for line in io.lines(lionfolder .. "projects-folders.lion") do
 		list_folder[#list_folder + 1] = line
 		counter = counter + 1
 	end
