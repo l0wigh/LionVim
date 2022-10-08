@@ -290,7 +290,7 @@ end
 
 local function status()
 	local content = {
-		"    LionVim - Version: 0.1.0",
+		"    LionVim - Version: 0.1.1",
 		"    Codename: DV6TED4",
 		"",
 		"    Reliable, Fast, and Easy to use",

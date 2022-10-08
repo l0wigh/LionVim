@@ -3,11 +3,9 @@ local cmp = require("cmp")
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 vim.cmd [[
-" gray
-highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-" blue
-highlight! link CmpItemAbbrMatch String
-highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+	highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+	highlight! link CmpItemAbbrMatch String
+	highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
 ]]
 
 cmp.setup({
@@ -15,6 +13,11 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = "symbol_text",
 		}),
+	},
+	window = {
+		documentation = {
+			winhighlight = "Normal:Pmenu",
+		},
 	},
     snippet = {
       expand = function(args)
@@ -31,10 +34,10 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "copilot" },
 		{ name = "luasnip" },
-		{ name = "path" },
-		{ name = "cmdline" },
-	}, {
 		{ name = "buffer" },
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
 	}),
 	experimental = {
 		ghost_text = true
