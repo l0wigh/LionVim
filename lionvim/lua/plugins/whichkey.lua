@@ -57,6 +57,7 @@ wk.register({
 		h = {":Lspsaga hover_doc<CR>", "Show hover doc"},
 		c = {":Lspsaga code_action<CR>", "Show code action"},
 		n = {":Lspsaga diagnostic_jump_next<CR>", "Show next diagnostic"},
+		t = {":TroubleToggle <CR>", "Show all diagnostics"},
 	},
 	-- Vim tabs stuff mappings
 	t = {

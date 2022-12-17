@@ -17,11 +17,20 @@ require('packer').startup({function()
 		end
 	}
 
+	-- Plugins in testing
+	use {
+		'lukas-reineke/indent-blankline.nvim'
+	}
+	use 'folke/trouble.nvim'
+
+
 	use 'github/copilot.vim'
 	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
+	-- use {'$HOME/projects/vanessa/', requires = {'rktjmp/lush.nvim'}}
 	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
+	use { 'L0Wigh/zenith.nvim', requires = {'rktjmp/lush.nvim'} }
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -30,7 +39,7 @@ require('packer').startup({function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-copilot'
+	-- use 'hrsh7th/cmp-copilot'
 	use 'L3MON4D3/LuaSnip'
 	use "rafamadriz/friendly-snippets"
 	use 'saadparwaiz1/cmp_luasnip'
@@ -99,3 +108,5 @@ require("plugins.nvimcomment")
 require("plugins.dashboard")
 require("plugins.whichkey")
 require("plugins.symbols")
+require("plugins.indent-blankline")
+require("plugins.trouble")

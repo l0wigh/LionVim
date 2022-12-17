@@ -23,11 +23,20 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	-- Plugins in testing
+	use {
+		'lukas-reineke/indent-blankline.nvim'
+	}
+	use 'folke/trouble.nvim'
+
+
 	use 'github/copilot.vim'
 	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
+	-- use {'$HOME/projects/vanessa/', requires = {'rktjmp/lush.nvim'}}
 	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
+	use { 'L0Wigh/zenith.nvim', requires = {'rktjmp/lush.nvim'} }
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -36,7 +45,7 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-copilot'
+	-- use 'hrsh7th/cmp-copilot'
 	use 'L3MON4D3/LuaSnip'
 	use "rafamadriz/friendly-snippets"
 	use 'saadparwaiz1/cmp_luasnip'
@@ -69,6 +78,7 @@ return require('packer').startup(function(use)
 
 	use 'terrortylor/nvim-comment' -- easy comment with shortcuts
 	use 'folke/lsp-colors.nvim' -- be sure to have lsp colors everywhere
+	-- use { 'glepnir/dashboard-nvim', lock = true } -- old dashboard that is still working with LionVim config
 	use 'L0Wigh/lionboard.nvim'
 
 	use 'folke/which-key.nvim' -- pressing space to have shortcuts is great

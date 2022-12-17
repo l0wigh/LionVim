@@ -27,8 +27,6 @@ vim.cmd [[
 
 	if exists("g:neovide")
 		set guifont=JetBrains\ Mono:h16
-		"set guifont=VictorMono\ NF:h16
-		" set guifont=Cozette:h14
 		nmap <C-shift-c> "+y
 		vmap <C-shift-c> "+y
 		nmap <C-shift-v> "+p

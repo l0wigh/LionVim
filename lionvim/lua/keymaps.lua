@@ -23,6 +23,12 @@ vim.cmd [[
 	nnoremap <C-w>h <C-w>m
 ]]
 
+-- The primeagen lines moving magic
+vim.cmd [[
+	vnoremap K :m '>+1<CR>gv=gv
+	vnoremap L :m '<-2<CR>gv=gv
+]]
+
 -- Some more keybinds
 vim.cmd [[
 	tnoremap jk <C-\><C-n>
