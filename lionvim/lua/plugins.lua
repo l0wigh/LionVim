@@ -94,6 +94,12 @@ require('packer').startup({function()
 
 	use 'ray-x/lsp_signature.nvim' -- Little lion that help you with function signatures
 
+	-- DAP
+	use 'mfussenegger/nvim-dap'
+	use 'rcarriga/nvim-dap-ui'
+	use 'ChristianChiarulli/neovim-codicons'
+	use 'jay-babu/mason-nvim-dap.nvim'
+
 end,
 config = {
 	display = {

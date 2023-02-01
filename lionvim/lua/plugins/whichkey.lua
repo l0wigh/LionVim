@@ -6,6 +6,18 @@ wk.register({
 	["e"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
 	["u"] = { "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", "Undotree" },
 	["T"] = { "<cmd>call LionTerminal()<CR>", "Open Terminal" },
+	d = {
+		name = "+DAP",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+		R = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run to Cursor" },
+		r = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+		n = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
+		N = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+		o = { "<cmd>lua require'dap'.step_out()<CR>", "Step Out" },
+		s = { "<cmd>lua require'dapui'.setup()<CR>", "Setup DAP UI" },
+		t = { "<cmd>lua require'dapui'.toggle()<CR>", "Toggle DAP UI" },
+		k = { "<cmd>lua require'dap'.terminate()<CR>", "Kill Process" },
+	},
 	h = {
 		name = "+Hop",
 		f = { "<cmd>lua require('hop').hint_char1()<CR>", "Hop to a char" },
