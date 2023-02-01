@@ -90,6 +90,7 @@ wk.register({
 			l = {"<cmd>call CalcLine()<CR>", "Calculate the current line"},
 			c = {"<cmd>lua require('calc').clear()<CR>", "Clear everything"},
 		},
+		u = { "<cmd>call LionPackagesUpdate()<CR>", "Update plugins" }
 	}
 },
 	{ prefix = "<leader>", mode = "n", noremap = true }

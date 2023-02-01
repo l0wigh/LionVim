@@ -258,7 +258,7 @@ local function newFile()
 		end,
 		on_submit = function(value)
 			print("New file: ", value)
-			vim.cmd("edit " .. value)
+			vim.cmd("e " .. value)
 		end,
 	})
 	input:mount()
@@ -377,6 +377,12 @@ function Projectsmanager()
 	menu:on(event.BufLeave, menu.menu_props.on_close, { once = true })
 end
 
+function Update_package()
+	vim.cmd("w")
+	vim.cmd("so %")
+	vim.cmd("PackerSync")
+end
+
 return {
 	update = update,
 	status = status,
@@ -386,5 +392,6 @@ return {
 	selectproject = selectproject,
 	projectsmanager = Projectsmanager,
 	deleteproject = deleteproject,
-	lionterminal = lionterminal
+	lionterminal = lionterminal,
+	update_packages = Update_package,
 }

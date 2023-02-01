@@ -38,6 +38,11 @@ fun! LionTerminal()
 	lua require("LionTools").lionterminal()
 endfun
 
+fun! LionPackagesUpdate()
+	lua for k in pairs(package.loaded) do if k:match('^LionPackagesUpdate') then package.loaded[k] = nil end end
+	lua require("LionTools").update_packages()
+endfun
+
 augroup LionTools
 	autocmd!
 augroup END
