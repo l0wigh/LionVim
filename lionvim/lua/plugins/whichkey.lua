@@ -47,9 +47,8 @@ wk.register({
 	},
 	l = {
 		name = "+LSP",
-		D = {":lua vim.lsp.buf.definition()<CR>", "Show definition"},
+		D = {":Lspsaga goto_definition<CR>", "Show definition"},
 		d = {":Lspsaga show_line_diagnostics<CR>", "Show diagnostic for the line"},
-		i = {":Lspsaga implement<CR>", "Show implementation"},
 		s = {":Telescope lsp_document_symbols<CR>", "Show document symbols"},
 		S = {":Telescope lsp_workspace_symbols<CR>", "Show workspace symbols"},
 		R = {":lua vim.lsp.buf.references()<CR>", "Show references"},
@@ -57,7 +56,6 @@ wk.register({
 		h = {":Lspsaga hover_doc<CR>", "Show hover doc"},
 		c = {":Lspsaga code_action<CR>", "Show code action"},
 		n = {":Lspsaga diagnostic_jump_next<CR>", "Show next diagnostic"},
-		t = {":TroubleToggle <CR>", "Show all diagnostics"},
 	},
 	-- Vim tabs stuff mappings
 	t = {

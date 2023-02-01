@@ -21,7 +21,6 @@ require('packer').startup({function()
 	use {
 		'lukas-reineke/indent-blankline.nvim'
 	}
-	use 'folke/trouble.nvim'
 
 
 	use 'github/copilot.vim'
@@ -34,6 +33,9 @@ require('packer').startup({function()
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+	use "jose-elias-alvarez/null-ls.nvim"
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -43,13 +45,19 @@ require('packer').startup({function()
 	use 'L3MON4D3/LuaSnip'
 	use "rafamadriz/friendly-snippets"
 	use 'saadparwaiz1/cmp_luasnip'
-	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
 	use 'onsails/lspkind-nvim'
-	use 'tami5/lspsaga.nvim'
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		requires = { {"nvim-tree/nvim-web-devicons"} }
+	})
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
@@ -97,8 +105,6 @@ require("nvim-autopairs").setup{}
 
 require("plugins.lualine")
 require("plugins.42header")
-require("plugins.lsp_installer")
--- require("plugins.lspsaga")
 require("plugins.treesitter")
 require("plugins.lsp_signature")
 require("plugins.nvim_cmp")
@@ -109,4 +115,5 @@ require("plugins.dashboard")
 require("plugins.whichkey")
 require("plugins.symbols")
 require("plugins.indent-blankline")
-require("plugins.trouble")
+require("plugins.mason")
+require("plugins.null_ls")

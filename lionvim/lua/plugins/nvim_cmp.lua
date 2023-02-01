@@ -46,7 +46,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	}, {
-		{ name = "cmdline" },
+		-- { name = "cmdline" },
 	}),
 	experimental = {
 		ghost_text = true

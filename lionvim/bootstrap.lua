@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
 	use {
 		'lukas-reineke/indent-blankline.nvim'
 	}
-	use 'folke/trouble.nvim'
 
 
 	use 'github/copilot.vim'
@@ -40,6 +39,9 @@ return require('packer').startup(function(use)
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+	use "jose-elias-alvarez/null-ls.nvim"
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -49,13 +51,19 @@ return require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip'
 	use "rafamadriz/friendly-snippets"
 	use 'saadparwaiz1/cmp_luasnip'
-	use 'williamboman/nvim-lsp-installer'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
 	use 'onsails/lspkind-nvim'
-	use 'tami5/lspsaga.nvim'
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		requires = { {"nvim-tree/nvim-web-devicons"} }
+	})
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end

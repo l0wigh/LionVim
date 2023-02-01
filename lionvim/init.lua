@@ -2,6 +2,7 @@
 vim.cmd [[
 	set rtp+=~/.config/lionvim/
 	set rtp-=~/.config/nvim/
+	set signcolumn=yes
 	set termguicolors
 	set noshowmode
 	set nowrap
@@ -31,10 +32,11 @@ vim.cmd [[
 		vmap <C-shift-c> "+y
 		nmap <C-shift-v> "+p
 	endif
-	colorscheme vanessa
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]
 
+vim.cmd("colorscheme vanessa")
 require("keymaps")
 require("plugins")
 require("lsp-config")
+
