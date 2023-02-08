@@ -43,6 +43,11 @@ fun! LionPackagesUpdate()
 	lua require("LionTools").update_packages()
 endfun
 
+fun! LionAddDapConfig()
+	lua for k in pairs(package.loaded) do if k:match('^LionAddDapConfig') then package.loaded[k] = nil end end
+	lua require("LionTools").add_dap_configuration()
+endfun
+
 augroup LionTools
 	autocmd!
 augroup END

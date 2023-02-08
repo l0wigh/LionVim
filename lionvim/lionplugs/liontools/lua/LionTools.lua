@@ -383,6 +383,24 @@ function Update_package()
 	vim.cmd("PackerSync")
 end
 
+function Add_dap_configuration()
+	exe = vim.fn.input('Path to executable: ', vim.fn.getcwd()..'/', 'file')
+	arg = {}
+	arg[1] = vim.fn.input('Arguments: ')
+	local dap = require('dap')
+	dap.configurations.c = {
+		{
+			type = 'codelldb',
+			request = 'launch',
+			program = exe,
+			cwd = '${workspaceFolder}',
+			terminal = 'integrated',
+			args = arg
+		}
+	}
+	dap.configurations.cpp = dap.configurations.c
+end
+
 return {
 	update = update,
 	status = status,
@@ -394,4 +412,5 @@ return {
 	deleteproject = deleteproject,
 	lionterminal = lionterminal,
 	update_packages = Update_package,
+	add_dap_configuration = Add_dap_configuration,
 }

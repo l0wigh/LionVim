@@ -8,6 +8,7 @@ wk.register({
 	["T"] = { "<cmd>call LionTerminal()<CR>", "Open Terminal" },
 	d = {
 		name = "+DAP",
+		c = { "<cmd>call LionAddDapConfig()<CR>", "Add DAP Config" },
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
 		R = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run to Cursor" },
 		r = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },

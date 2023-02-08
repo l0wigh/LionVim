@@ -13,13 +13,5 @@ dap.configurations.c = {
 			a[1] = vim.fn.input('Arguments : ')
 			return a
 		end
-		-- args = function ()
-		-- 	local a = {}
-		-- 	str = vim.fn.input('Arguments : ')
-		-- 	for i, arg in string.gmatch(str, "(%w+)=(%w+)") do
-		-- 		a[i] = arg
-		-- 	end
-		-- 	return a
-		-- end
 	}
 }
