@@ -23,7 +23,7 @@ require('packer').startup({function()
 	}
 
 
-	use 'github/copilot.vim'
+	-- use 'github/copilot.vim'
 	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
@@ -123,3 +123,4 @@ require("plugins.symbols")
 require("plugins.indent-blankline")
 require("plugins.mason")
 require("plugins.null_ls")
+require("plugins.dap")
