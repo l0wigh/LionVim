@@ -20,7 +20,7 @@ The installer is (for now) really simple and might be not working properly.
 
 Requirements :
 
-* Nvim 0.8.0 or higher
+* Nvim 0.9.0 or higher (Nightly will always be better)
 * yarn / npm
 * ripgrep
 
@@ -41,7 +41,7 @@ UI with :
 - Vanessa coloscheme (made by me)
 - Lualine
 - Barbar
-- Dashboard
+- Dashboard (my own fork since new changes are not fitting my setup)
 - nui
 
 Workflow tools :
