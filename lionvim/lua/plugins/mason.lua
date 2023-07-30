@@ -23,9 +23,3 @@ require("mason-nvim-dap").setup({
     automatic_setup = true,
 	automatic_installation = true,
 })
-
-require 'mason-nvim-dap'.setup_handlers {
-	function(source_name)
-		require('mason-nvim-dap.automatic_setup')(source_name)
-	end,
-}
