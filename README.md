@@ -2,7 +2,7 @@
  <img width="300" src="https://raw.githubusercontent.com/l0wigh/lionvim/master/lionvim.png">
 </p>
 
-# LionVim 0.1.0
+# LionVim 0.1.3
 
 After using [LunarVim](https://lunarvim.org) as a base for my SolarVim config.
 

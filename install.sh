@@ -1,9 +1,8 @@
 #!/bin/bash
 
-mv ~/.config/lionvim ~/.config/lionvim-old
+mv ~/.config/lionvim ~/.config/lionvim-old 2> /dev/null
 cp -r ./lionvim $HOME/.config/
 cp ./lion $HOME/.local/bin/
-sudo cp ./lion /usr/local/bin/
-sudo cp ./lion /usr/bin/
+lion --headless
 echo "Installation finished"
 echo "Use the command \"lion\" to RrrrRRRR"

@@ -8,28 +8,22 @@ require('packer').startup({function()
 	-- Hop everywhere you want
 	use {
 		'phaazon/hop.nvim',
-		branch = 'v1.3', -- optional but strongly recommended
-		config = function()
-			require'hop'.setup {
-				keys = 'etovxqpdygfblzhckisuran',
-				quit_key = '<Esc>'
-			}
-		end
+		branch = 'v2', -- optional but strongly recommended
 	}
 
 	-- Plugins in testing
 	use {
 		'lukas-reineke/indent-blankline.nvim'
 	}
-
-
 	use 'github/copilot.vim'
+
 	use '42Paris/42header' -- Not required obviously
 
 	-- Colorschemes
 	-- use {'$HOME/projects/vanessa/', requires = {'rktjmp/lush.nvim'}}
 	use { 'L0Wigh/vanessa.nvim', requires = {'rktjmp/lush.nvim'} }
 	use { 'L0Wigh/zenith.nvim', requires = {'rktjmp/lush.nvim'} }
+	use 'LunarVim/TempleOS.nvim' -- Devine Intellect
 
 	-- LSP Plugins Chain
 	use 'neovim/nvim-lspconfig'
@@ -52,9 +46,6 @@ require('packer').startup({function()
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
-		config = function()
-			require("lspsaga").setup({})
-		end,
 		requires = { {"nvim-tree/nvim-web-devicons"} }
 	})
 	use {
