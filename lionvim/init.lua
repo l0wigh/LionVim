@@ -45,12 +45,15 @@ if not vim.loop.fs_stat(packerpath) then
 		"https://github.com/wbthomason/packer.nvim",
 		packerpath,
 	})
+	require("plugins")
+	vim.cmd("autocmd User PackerComplete quitall")
+	vim.cmd("PackerSync")
 end
 
 require("plugins")
-vim.cmd("PackerInstall")
-
+require("configs")
 require("keymaps")
 require("lsp-config")
-vim.cmd("colorscheme vanessa")
-
+if vim.loop.fs_stat(vim.fn.stdpath("data") .. "/site/pack/packer/start/vanessa.nvim") then
+	vim.cmd("colorscheme vanessa")
+end

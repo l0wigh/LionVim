@@ -47,7 +47,6 @@ require('packer').startup({function()
 	use 'saadparwaiz1/cmp_luasnip'
 	use {
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
 	}
 	use 'onsails/lspkind-nvim'
 	use({
@@ -60,7 +59,6 @@ require('packer').startup({function()
 	})
 	use {
 		"windwp/nvim-autopairs",
-		config = function() require("nvim-autopairs").setup {} end
 	}
 
 	-- Lines and stuff
@@ -106,21 +104,3 @@ config = {
 		open_fn = require('packer.util').float,
 	}
 }})
-
-require("nvim-autopairs").setup{}
-
-require("plugins.lualine")
-require("plugins.42header")
-require("plugins.treesitter")
-require("plugins.lsp_signature")
-require("plugins.nvim_cmp")
-require("plugins.copilot")
-require("plugins.nvimtree")
-require("plugins.nvimcomment")
-require("plugins.dashboard")
-require("plugins.whichkey")
-require("plugins.symbols")
-require("plugins.indent-blankline")
-require("plugins.mason")
-require("plugins.null_ls")
-require("plugins.dap")
