@@ -35,8 +35,22 @@ vim.cmd [[
 	highlight CopilotSuggestion guifg=#2e5d7d ctermfg=8
 ]]
 
-vim.cmd("colorscheme vanessa")
-require("keymaps")
+local packerpath = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if not vim.loop.fs_stat(packerpath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		packerpath,
+	})
+end
+
 require("plugins")
+vim.cmd("PackerInstall")
+
+require("keymaps")
 require("lsp-config")
+vim.cmd("colorscheme vanessa")
 
