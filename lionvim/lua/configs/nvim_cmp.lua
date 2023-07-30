@@ -40,13 +40,10 @@ cmp.setup({
 		["<Esc>"] = cmp.mapping.abort(),
 	}),
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		-- { name = "copilot" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
-	}, {
-		-- { name = "cmdline" },
+		{ name = "nvim_lsp", max_item_count = 5 },
+		{ name = "luasnip", max_item_count = 3 },
+		{ name = "buffer", max_item_count = 3 },
+		{ name = "path", max_item_count = 3 },
 	}),
 	experimental = {
 		ghost_text = true
@@ -66,7 +63,7 @@ cmp.setup({
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+      { name = 'buffer', max_item_count = 10 }
     }
   })
 
@@ -74,9 +71,9 @@ cmp.setup({
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
+      { name = 'path', max_item_count = 10 }
     }, {
-      { name = 'cmdline' }
+      { name = 'cmdline', max_item_count = 10 }
     })
   })
 
